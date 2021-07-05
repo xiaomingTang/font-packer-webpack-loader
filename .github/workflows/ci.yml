@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
+      - run: echo ${{secrets.NPM_CONFIG_NAME}}
       - run: yarn
       - run: yarn run lint
       - run: yarn run test
