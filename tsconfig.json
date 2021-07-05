@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": false,
+    "module": "CommonJS",
+    "target": "ES2015",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "paths": {
+      "@Src/*": ["src/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "plugins": [
+      {
+        "transform": "ts-transform-paths"
+      }
+    ]
+  },
+  // just for typing, real tsconfig is ./tsconfig-for-build.json
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}

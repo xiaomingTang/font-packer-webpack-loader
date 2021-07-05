@@ -1,0 +1,54 @@
+{
+  "name": "font-packer-webpack-loader",
+  "description": "font-packer-webpack-loader",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist", "src"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src       --ext .ts",
+    "lint:fix": "eslint src --fix --ext .ts",
+    "build": "yarn run lint && ttsc --newLine lf --project tsconfig-for-build.json",
+    "build:watch": "           ttsc --newLine lf --project tsconfig-for-build.json --watch",
+    "node": "node ./dist/index.js",
+    "dev": "nodemon --watch src --watch test --ext ts --exec ts-node -r tsconfig-paths/register --project tsconfig-for-build.json src/index.ts",
+    "start": "yarn run dev",
+    "test": "yarn run build && mocha --timeout 10000 -r ts-node/register -r tsconfig-paths/register --project tsconfig-for-build.json test/*.ts"
+  },
+  "peerDependencies": {
+    "webpack": "^4.46.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fontmin": "^0.9.8",
+    "istextorbinary": "^5.12.0",
+    "loader-utils": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/loader-utils": "^2.0.2",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.0.6",
+    "@types/rimraf": "^3.0.0",
+    "@types/webpack": "^4.41.28",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "assert": "^2.0.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.2.0",
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "ts-transform-paths": "^2.0.2",
+    "tsconfig-paths": "^3.9.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^3.7.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0"
+  }
+}
