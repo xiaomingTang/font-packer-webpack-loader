@@ -1,6 +1,9 @@
 {
   "name": "font-packer-webpack-loader",
   "description": "font-packer-webpack-loader",
+  "keywords": [
+    "font", "pack", "extract", "font packer", "loader", "webpack", "字体", "提取"
+  ],
   "version": "0.0.6",
   "main": "dist/index.js",
   "files": [
