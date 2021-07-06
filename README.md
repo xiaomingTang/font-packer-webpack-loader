@@ -37,12 +37,12 @@ module.exports = {
             loader: "url-loader",
             options: {
               limit: 8192,
-              name: "p-f-[name].[contenthash:5].[ext]",
+              name: "assets/fonts/[name].[contenthash:5].[ext]",
             },
           },
           // 在下面新增本 loader
           {
-            loader: "font-packer-webpack-plugin",
+            loader: "font-packer-webpack-loader",
             options: {
               texts: [
                 "这是可选的、需要额外提取的文本",
