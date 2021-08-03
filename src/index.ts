@@ -2,7 +2,7 @@ import fs from "fs"
 import { loader } from "webpack"
 import { getOptions } from "loader-utils"
 import Fontmin from "fontmin"
-import { getEncoding, isText } from "istextorbinary"
+import { isText } from "istextorbinary"
 
 import { geneOptions, Options } from "@Src/options"
 import { getAllFilesFromArray, log } from "@Src/utils"
@@ -15,11 +15,8 @@ function getTextsFromOptions({
   ]
   const allFiles = getAllFilesFromArray(filesOrDirs)
   allFiles.forEach((p) => {
-    if (!isText(p)) {
-      return
-    }
     const buffer = fs.readFileSync(p)
-    if (getEncoding(buffer) !== "utf8") {
+    if (!isText(p, buffer)) {
       return
     }
     finalTexts.push(fs.readFileSync(p, "utf8"))
